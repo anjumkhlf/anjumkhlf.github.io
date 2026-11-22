@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (systemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/about.css">
@@ -18,6 +26,7 @@
             <a class="dark-mode-toggle" id="toggle-theme">dark mode</a>
         </div>
         <br>
+        <p style="font-style: italic; text-align: center;">wip</p>
     </div>
 </body>
 </html>
