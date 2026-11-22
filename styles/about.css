@@ -1,0 +1,20 @@
+.me-photo {
+    width: clamp(150px, 20vw, 200px);
+    height: auto;
+    object-fit: contain;
+}
+
+.me {
+    padding: 20px;
+}
+
+@media (max-width: 600px){
+    .me-photo {
+        width: 250px;
+    }
+
+    .me {
+        display: grid;
+        justify-content: center;
+    }
+}

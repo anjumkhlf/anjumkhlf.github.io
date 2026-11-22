@@ -1,0 +1,55 @@
+:root {
+    --background-color: rgb(252, 248, 242);
+    --text-color: #3b2e44;
+}
+
+[data-theme="light"] {
+    --background-color: rgb(252, 248, 242);
+    --text-color: #3b2e44;
+}
+
+[data-theme="dark"] {
+    --background-color: rgb(39, 39, 45);
+    --text-color: rgb(225, 227, 214);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h4 {
+    margin: 0;
+}
+
+h6 {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+    font-size: 10px;
+}
+
+a {
+    color: #737cd0;
+    text-decoration: none;
+}
+
+.content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.info-box{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 600px){
+    .info-box {
+        display: block;
+    }
+}
