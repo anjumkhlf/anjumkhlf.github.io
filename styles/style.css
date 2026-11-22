@@ -3,11 +3,6 @@
     --text-color: #3b2e44;
 }
 
-[data-theme="light"] {
-    --background-color: rgb(252, 248, 242);
-    --text-color: #3b2e44;
-}
-
 [data-theme="dark"] {
     --background-color: rgb(39, 39, 45);
     --text-color: rgb(225, 227, 214);
