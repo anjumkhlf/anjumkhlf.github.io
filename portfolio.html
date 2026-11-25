@@ -3,10 +3,11 @@
 <head>
     <script>
         (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (systemDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            toggleButton.textContent = newTheme === "dark" ? "light mode" : "dark mode";
         })();
     </script>
     <link rel="stylesheet" href="styles/style.css">
@@ -25,8 +26,20 @@
             </ul>
             <a class="dark-mode-toggle" id="toggle-theme">dark mode</a>
         </div>
-        <br>
-        <p style="font-style: italic; text-align: center;">wip</p>
+
+        <p>tag selection goes here</p>
+
+        <div class="project">
+            <div class="project-card info-box">
+                <img src="img/enanan.jpg" class="info-photo">
+                <div>
+                    <h2>name of project</h2>
+                    <h5>tags here</h5>
+                    <p>short description of the project</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

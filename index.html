@@ -3,10 +3,10 @@
 <head>
     <script>
         (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (systemDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
     <link rel="stylesheet" href="styles/style.css">
@@ -26,14 +26,15 @@
         <a class="dark-mode-toggle" id="toggle-theme">dark mode</a>
         </div>
         <div class="info-box">
-            <div class="me">
-                <img src="img/enanan2.jpg" class="me-photo">
+            <div class="side-photo">
+                <img src="img/enanan2.jpg" class="info-photo">
                 <h6>totally a photo of me</h6>
             </div>
             <div class="text-box">
                 <h1>hello, world!</h1>
-                <p>hi! i'm anjum. i like computers. i'm an artist. welcome to my little corner of the web!</p>
+                <p>i'm anjum. i like computers. i'm an artist. welcome to my little corner of the web!</p>
                 <p>this is the place i document all the silly and not silly things i've done :)</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor pretium ligula vitae pharetra. Mauris aliquet urna ac enim facilisis, nec bibendum nulla pretium. Cras at euismod lacus, eget commodo ante. Sed ut velit egestas, pharetra est molestie, eleifend sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ornare mauris eu tortor ullamcorper sodales. Nullam vitae odio metus. Curabitur aliquam volutpat sem ultricies fermentum. </p>
                 <h4>talk to me!</h4>
                 <a href="linkedin.com/in/anjumkhlf/">linkedin</a> <a href="https://github.com/anjumkhlf">github</a> <a href="mailto:anjumkhlf@gmail.com">email</a>
             </div>

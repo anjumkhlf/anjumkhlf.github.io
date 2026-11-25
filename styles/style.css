@@ -40,11 +40,24 @@ a {
 
 .info-box{
     display: flex;
-    align-items: center;
+}
+
+.info-photo {
+    width: clamp(150px, 20vw, 200px);
+    height: auto;
+    object-fit: contain;
+    padding: 16px 16px 0px 16px;
+}
+
+.project-card{
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
 }
 
 @media (max-width: 600px){
     .info-box {
         display: block;
+        text-align: center;
     }
 }

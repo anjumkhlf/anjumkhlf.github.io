@@ -2,10 +2,11 @@
     width: clamp(150px, 20vw, 200px);
     height: auto;
     object-fit: contain;
+    padding: 16px 16px 0px 16px;
 }
 
 .me {
-    padding: 20px;
+
 }
 
 @media (max-width: 600px){
@@ -13,7 +14,7 @@
         width: 250px;
     }
 
-    .me {
+    .side-photo {
         display: grid;
         justify-content: center;
     }

@@ -1,0 +1,79 @@
+<!-- Filter Buttons -->
+<div id="filter-buttons">
+    <button class="filter-btn" data-filter="all">All</button>
+    <button class="filter-btn active" data-filter="red">red</button>
+    <button class="filter-btn" data-filter="orange">orange</button>
+    <button class="filter-btn" data-filter="yellow">yellow</button>
+    <button class="filter-btn" data-filter="green">green</button>
+    <button class="filter-btn" data-filter="blue">blue</button>
+    <button class="filter-btn" data-filter="purple">purple</button>
+</div>
+
+<!-- Filterable Elements -->
+<div class="items-container">
+    <div class="item" data-tags="red">tomato (red)</div>
+    <div class="item" data-tags="red green">apple (red, green)</div>
+    <div class="item" data-tags="orange">orange (orange)</div>
+    <div class="item" data-tags="red orange">fire (red, orange)</div>
+    <div class="item" data-tags="yellow">banana (yellow)</div>
+    <div class="item" data-tags="green">plant (green)</div>
+    <div class="item" data-tags="green">broccoli (green)</div>
+    <div class="item" data-tags="orange green blue">flag of india (orange, green, blue)</div>
+    <div class="item" data-tags="red orange yellow green blue purple">rainbow</div>
+</div>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .filter-btn.active {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+
+<script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.item');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            // get selected tag
+            const selectedTag = button.getAttribute('data-filter');
+            const activeTags = [];
+
+            // unshow all other tags (if selected tag is 'all')
+            if (selectedTag === 'all') {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            } else { // show all selected tags and deselect all (if selected tag isn't 'all')
+                document.querySelector('[data-filter="all"]').classList.remove('active');
+                if (button.classList.contains('active')) {
+                    button.classList.remove('active');
+                } else {
+                    button.classList.add('active');
+                }
+            }
+            
+            // get list of all selected tags
+            buttons.forEach(btn => {
+                if (btn.classList.contains('active')) {
+                    activeTags.push(btn.getAttribute('data-filter'));
+                }
+            })
+
+            // filter items based on which tags are selected
+            items.forEach(item => {
+                const itemTags = item.getAttribute('data-tags').split(' ');
+                if (selectedTag === 'all' || itemTags.some(item => activeTags.includes(item))) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            })
+        })
+    });
+
+</script>
